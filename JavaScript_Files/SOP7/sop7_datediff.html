@@ -1,0 +1,23 @@
+<html>
+<body>
+<h3>Date Difference (days)</h3>
+<form name="form_task" onsubmit="return false;">
+Date1: <input type="text" name="d1" placeholder="dd-mm-yyyy"><br><br>
+Date2: <input type="text" name="d2" placeholder="dd-mm-yyyy"><br><br>
+<input type="button" value="Submit" onclick="getDays(form_task.d1.value, form_task.d2.value)">
+</form>
+<p id="out"></p>
+<script type="text/javascript">
+function getDays(d1, d2){
+ function parseDMY(s){
+ var day = s.slice(0,2), mon = s.slice(3,5), yr = s.slice(6,10);
+ return new Date(yr, mon-1, day);
+ }
+ var dt1 = parseDMY(d1), dt2 = parseDMY(d2);
+ var one_day = 1000*60*60*24;
+ var diff = Math.round((dt2.getTime()-dt1.getTime())/one_day);
+ document.getElementById("out").innerHTML = "Difference (days): " + diff;
+}
+</script>
+</body>
+</html>

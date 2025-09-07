@@ -1,0 +1,27 @@
+<html>
+<body>
+<h3>Average & Grade — 6 Subjects</h3>
+<form name="frm1">
+English: <input type="number" name="t1"><br><br>
+Maths: <input type="number" name="t2"><br><br>
+Physics: <input type="number" name="t3"><br><br>
+Chemistry: <input type="number" name="t4"><br><br>
+IT: <input type="number" name="t5"><br><br>
+Biology: <input type="number" name="t6"><br><br>
+<input type="button" value="Print Grade" onclick="grade()">
+</form>
+<script type="text/javascript">
+function grade(){
+ var m1=+frm1.t1.value, m2=+frm1.t2.value, m3=+frm1.t3.value, m4=+frm1.t4.value, m5=+frm1.t5.value, m6=+frm1.t6.value;
+ var a=(m1+m2+m3+m4+m5+m6)/6;
+ alert("Average Marks of Student is "+a);
+ if(a>=91) alert("Grade A");
+ else if(a>=81) alert("Grade B");
+ else if(a>=71) alert("Grade C");
+ else if(a>=61) alert("Grade D");
+ else if(a>=35) alert("Grade F");
+ else alert("Not Promoted");
+}
+</script>
+</body>
+</html>

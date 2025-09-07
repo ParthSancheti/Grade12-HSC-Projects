@@ -1,0 +1,42 @@
+<html>
+<head><title>Student Form</title></head>
+<body>
+<h1>Student Information</h1>
+<form name="forml">
+Enter Name: <input type="text" name="t1">
+<br><br>
+Enter Address:
+<textarea name="t2" placeholder="RESIDENTIAL ADDRESS">
+</textarea>
+<br><br>
+Enter Telehpone Number:
+<input type="tel" maxlength="10">
+<br><br>
+Enter Email Address
+<input type="email" name="t3" pattern="[A-Z,a-z]{5}-[@]{1}-[.]{1}" 
+placeholder="aus123@gmail.com">
+<br><br>
+<input type="button" name="b1" value="Submit" onClick="chk()">
+</form>
+<script type="text/javascript">
+function chk()
+{
+var x=form1.t3.value;
+var atpos=x.indexOf("@");
+var lastat=x.lastIndexOf("@");
+var firstdot=x.indexOf(".");
+var dotpos =x.lastIndexOf(".");
+if(atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length || firstdot<atpos || 
+atpos<lastat)
+{
+alert("Not a valid email address");
+form1.t3.focus();
+}
+else
+{
+alert("Email address is accepted");
+return true;
+}
+</script>
+</body>
+</html>

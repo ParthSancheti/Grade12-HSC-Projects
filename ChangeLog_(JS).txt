@@ -1,0 +1,84 @@
+prompt1 — here’s a friendly, line-by-line fix list I’d show a teacher (no structure changes, only correctness/consistency). I’m referencing your PDF pages so you can verify each note.
+
+# SOP 1 — “Person Eligible to vote or not” (page 1)
+
+* ✅ Form + PHP match: `method="GET"` and `$_GET["age1"]` are consistent. Keep file name `age.php` exactly as written.&#x20;
+* 💡 Minor clarity (optional): change label text to “Enter Age:” to reflect the logic (no code change).&#x20;
+
+# SOP 2 — “Count vowels” (page 2)
+
+* ✅ Method matches: `method="POST"` and `$_POST["t1"]` align; `vowel.php` is a consistent action name—keep it.&#x20;
+* ✅ Logic and case-handling (`strtolower`) are correct. No fixes needed.&#x20;
+* ⚠️ Formatting: right after this block, a new section starts with `*** Server side Script *** <html> … <?php` but it belongs to the next SOPs; make sure headings don’t duplicate to avoid confusion in print. (No code change—just ensure the label sits with the right block.)&#x20;
+
+# SOP 3 — Associative array ops (pages 2–3)
+
+Goal per textbook note: show key→value pairs, show size, delete one element, then re-show.
+Issues & precise fixes:
+
+1. ❌ Deleting from an **associative** array with `array_splice($m1,0,1);` is wrong—it converts keys to numeric and deletes arbitrarily.
+   ✔️ Fix: delete by key you intend to remove, e.g. `unset($m1["English"]);` (keeps it associative and predictable).&#x20;
+2. ❌ Bad HTML closing tag:
+   `echo "<br><br><b>After deleting array is </br>";`
+   ✔️ Fix: `echo "<br><br><b>After deleting array is </b><br>";`&#x20;
+3. ❌ Missing `>` in a `<br>`:
+   `echo"<br";`
+   ✔️ Fix: `echo "<br>";` (or remove the line; the previous echoes already add breaks).&#x20;
+
+# SOP 4 — Total & percentage with `for` (pages 3–4)
+
+Issues & precise fixes:
+
+1. ❌ `for` syntax has commas and a stray `$`:
+   `for($x=0,$<$c,$x++)`
+   ✔️ Fix: `for ($x = 0; $x < $c; $x++)`&#x20;
+2. ⚠️ Output concatenation is inconsistent and mixes a literal dot before the variable:
+   `echo"<br><br>marks in subject.$a[$x]";`
+   ✔️ Safer/clearer: `echo "<br><br>Marks in subject: " . $a[$x];`
+   (Same pattern later for `total`/`percentage`: `echo "<br><br>Total is: " . $t;`)&#x20;
+
+# SOP 5 — Totals & percentage with `foreach` (page 4)
+
+* ⚠️ Same concatenation clarity as SOP 4:
+  `echo"<br><br>Marks in subject.$value";` → `echo "<br><br>Marks in subject: " . $value;`
+  And then:
+  `echo"<br><br>Total is: .$t";` → `echo "<br><br>Total is: " . $t;`
+  `echo"<br><br>Percentage is: .$p";` → `echo "<br><br>Percentage is: " . $p;`&#x20;
+
+# SOP 6 — Electricity bill (pages 4–5)
+
+Textbook slab (blue box on page 4):
+• First 100 units → ₹4 per unit
+• Next 100 units → ₹5 per unit
+• Remaining units → ₹6 per unit.&#x20;
+Your PHP (page 5) currently charges `1/2/3` and then jumps to `7` plus an extra fixed `+250`, which doesn’t match the stated slab. Also the final echo hardcodes “OCT”.
+Exact corrections (keep structure, just fix math & wording):
+
+1. Replace the rate math with the textbook slabs:
+
+   ```php
+   if ($units <= 100) {
+       $bill = $units * 4;
+   } elseif ($units <= 200) {
+       $bill = (100 * 4) + (($units - 100) * 5);
+   } else { // > 200
+       $bill = (100 * 4) + (100 * 5) + (($units - 200) * 6);
+   }
+   ```
+
+   (Remove earlier `1/2/3/7` multipliers.)&#x20;
+2. Remove the unrelated fixed add-on:
+   ❌ `$tot = $bill + 250;`
+   ✔️ Use the computed `$bill` directly (unless your syllabus specifies a fixed charge, which the prompt here does not).&#x20;
+3. Make the message generic (no hardcoded month):
+   `echo "Total bill to be paid: " . $bill;`&#x20;
+4. Tiny UI polish (optional): the form label says “enter Number”; consider “Enter units:” for clarity. (No code logic change.)&#x20;
+
+# General naming / case / file consistency (applies across pages)
+
+* **File names used in forms** (`age.php`, `vowel.php`, `bill.php`) should exactly match the server files, including case (PHP on Windows is case-insensitive for file names, but servers on Linux are case-sensitive—stick to lower-case throughout).&#x20;
+* **Superglobals** are correct and case-sensitive: `$_GET`, `$_POST` (good). Don’t write `$_get` or `$_post`.&#x20;
+* **Function names**: you defined `function voting()` and called `voting();` with the same case—keep that exact match.&#x20;
+* **HTML self-closing line breaks**: always use `<br>` (not `</br>`). And don’t forget the `>` (one instance on page 3).&#x20;
+
+If you want, I can now apply just these fixes and give you **prompt2** as a clean, dark-mode PDF with your original questions’ images preserved and code blocks formatted—no extra meta tags or structure changes, strictly textbook-style.

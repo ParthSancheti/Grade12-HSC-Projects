@@ -1,0 +1,15 @@
+<html>
+<body bgcolor="white" onload="begin()" onunload="alert('Thanks for visiting! Page is unloading.')">
+<h3>Auto Background Color Changer — On Load</h3>
+<script type="text/javascript">
+var colors = ["red","orange","yellow","green","blue","indigo","violet","pink"];
+var i=0;
+function begin(){
+ setInterval(function(){
+ document.body.style.backgroundColor = colors[i % colors.length];
+ i++;
+ }, 1000);
+}
+</script>
+</body>
+</html>

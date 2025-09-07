@@ -1,0 +1,71 @@
+Part 1 — Friendly Changelog (what I fixed & why)
+
+SOP 1 — Index & Feedback (ashoka.html / feedback.html)
+
+Fixed the broken link text: feedbck.html → feedback.html.
+
+Fixed the “home” link: ashoka1.html → ashoka.html.
+
+Removed an accidental <center> placed inside the <style> block and cleaned up extra stray <center> tags.
+
+Normalized CSS color names: “navy blue”/“navyblue” → navy.
+
+Kept your meta tags; didn’t inject extra boilerplate. 
+
+L-1 Project Work 9 (HTML)
+
+SOP 2 — Tourist layout
+
+Replaced invalid fake tags <style1>, <style2> with <div class="style1"> / <div class="style2"> and proper CSS selectors .style1/.style2.
+
+(Optional spelling) “Aga Khan Palace” — kept content textbook-friendly. 
+
+L-1 Project Work 9 (HTML)
+
+SOP 3 — Traveller forms
+
+autocomplete attribute was dangling → autocomplete="on".
+
+Fixed phone pattern: [0-9]{3}-[0-9]{3}-[0-9]{4} (missing dash earlier).
+
+Made links consistent: traveller1.html ⇄ traveller2.html (instead of assorted names).
+
+Submit is now an image button to match the spec (“submit button as an image”). 
+
+L-1 Project Work 9 (HTML)
+
+SOP 4 — HTML5 layout
+
+Replaced smart quotes in align and fixed heading tag case.
+
+Typos fixed: ACHIEVEMENTS, Assessments, “Doctors”.
+
+Footer widened to full width and cleared floats so the layout doesn’t break. 
+
+L-1 Project Work 9 (HTML)
+
+SOP 5 — Audio
+
+loop="2" isn’t valid (loop is boolean) → loop.
+
+MIME type standardized: audio/mpeg instead of audio/mp3. 
+
+L-1 Project Work 9 (HTML)
+
+SOP 6 — Video
+
+Kept 150×150 px and autoplay+controls as per question. 
+
+L-1 Project Work 9 (HTML)
+
+SOP 7 — Image map
+
+Corrected external URL: w3schools.com (was w3school.com). 
+
+L-1 Project Work 9 (HTML)
+
+SOP 8 — SEO
+
+Organized your steps cleanly; preserved the tool reference and the on-page/off-page points shown in your doc (page 9). 
+
+L-1 Project Work 9 (HTML)

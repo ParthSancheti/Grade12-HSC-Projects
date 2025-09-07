@@ -1,0 +1,21 @@
+<html>
+<body>
+<h3>Celsius ↔ Fahrenheit</h3>
+Enter Celsius: <input type="text" id="c" onkeyup="convert('C')"> 
+<br><br>
+Enter Fahrenheit: <input type="text" id="f" onkeyup="convert('F')"> 
+<p><i>Note: Math.round() is used to return integers.</i></p>
+<script type="text/javascript">
+function convert(degree){
+ var x;
+ if(degree=="C"){
+ x=document.getElementById("c").value*9/5+32;
+ document.getElementById("f").value=Math.round(x);
+ }else{
+ x=(document.getElementById("f").value-32)*5/9;
+ document.getElementById("c").value=Math.round(x);
+ }
+}
+</script>
+</body>
+</html>

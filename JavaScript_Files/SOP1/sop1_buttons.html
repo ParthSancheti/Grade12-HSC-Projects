@@ -1,0 +1,31 @@
+<html>
+<body bgcolor="white">
+<h3>Background Color Changer — Mouseover & Click</h3>
+<input type="button" id="b1" value="Start (mouseover)">
+<input type="button" id="b2" value="Show Status (click)">
+<script type="text/javascript">
+var colors = ["red","orange","yellow","green","blue","indigo","violet","pink"];
+var idx = 0;
+var timer = null;
+var defaultBg = "white";
+function startCycle(){
+ if(timer!==null) return;
+ timer = setInterval(function(){
+ document.body.style.backgroundColor = colors[idx % colors.length];
+ idx++;
+ }, 1000);
+}
+function stopCycle(){
+ if(timer!==null){ clearInterval(timer); timer=null; }
+ idx = 0;
+ document.body.style.backgroundColor = defaultBg;
+}
+document.getElementById("b1").onmouseover = startCycle;
+document.getElementById("b1").onmouseout = stopCycle;
+document.getElementById("b2").onclick = function(){
+ window.status = "Second button clicked — status updated.";
+ alert("Second button clicked — status updated.");
+};
+</script>
+</body>
+</html>
