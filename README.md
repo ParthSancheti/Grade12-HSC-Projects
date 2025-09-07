@@ -1,4 +1,3 @@
-````markdown
 # 📘 HSC Class 12 Practical Programs (PHP)
 
 This repository contains the **HSC Grade 12 Practical Programs** implemented in **PHP + HTML**.  
@@ -105,7 +104,3 @@ http://localhost/ProjectRoot/HTML_Files/SOP6/index.html
 
 Prepared for **HSC Class 12 Practical Work (PHP)**.
 
-```
-
-Would you like me to also prepare a **ZIP of actual folders + files** (HTML + PHP + Output_Image placeholders) so you can push it directly to GitHub?
-```
