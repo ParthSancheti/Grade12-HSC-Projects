@@ -4,6 +4,9 @@ This repository contains the **HSC Grade 12 Practical Programs** implemented in 
 All programs are structured according to the **HSC textbook syllabus**.
 
 ---
+[![Download PDF](https://img.shields.io/badge/Download-PDF-red?style=for-the-badge&logo=adobeacrobatreader)](https://github.com/ParthSancheti/Grade12-HSC-Projects/releases)
+
+---
 
 ## 📂 Project Structure
 
