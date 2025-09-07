@@ -1,5 +1,3 @@
-Here’s a **README.md** you can directly use for GitHub. It matches the **fixed code** and **folder structure PDF** we just made:
-
 ```markdown
 # HSC Class 12 Practical Programs (PHP)
 
